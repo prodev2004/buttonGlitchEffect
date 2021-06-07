@@ -1,0 +1,150 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background-color: black;
+}
+
+a {
+    display: inline-block;
+    color: white;
+    font-size: 6rem;
+    text-decoration: none;
+    letter-spacing: .1em;
+    font-weight: 800;
+    padding: .1em.5em;
+    border: .15em solid white;
+    border-radius: .5em;
+    position: relative;
+}
+a:hover {
+    color: rgba(255, 255, 255, .8);
+    border-color: rgba(255, 255, 255, .8);
+}
+
+a::before, a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: translateY(5%);
+    text-align: center;
+    z-index: -1;
+}
+
+a::before {
+    color: rgba(255, 0, 0, .8);
+}
+a::after {
+    color: rgba(0, 255, 0, .8);
+}
+a:hover::before, a:hover::after {
+    content: 'ALB DEV';
+}
+a:hover::before {
+    animation: glitch-one 1000ms infinite linear;
+}
+a:hover::after {
+    animation: glitch-two 1000ms infinite linear;
+}
+
+@keyframes glitch-one {
+    0% {
+        left: 0;
+        top: -3px;
+    }
+    5% {
+        left: 2px;
+        top: -6px;
+    }
+    20% {
+        left: 4px;
+        top: -2px;
+    }
+    30% {
+        left: 6px;
+        top: 0;
+    }
+    40% {
+        left: -4px;
+        top: 4px;
+    }
+    50% {
+        left: 2px;
+        top: 2px;
+    }
+    60% {
+        left: 0px;
+        top: 0;
+    }
+    70% {
+        left: -6px;
+        top: -3px;
+    }
+    80% {
+        left: 8px;
+        top: -1px;
+    }
+    90% {
+        left: -10px;
+        top: 0;
+    }
+    100% {
+        left: 0px;
+        top: 10px;
+    }
+}
+
+@keyframes glitch-two {
+    0% {
+        left: -0;
+        top: 3px;
+    }
+    5% {
+        left: -2px;
+        top: 6px;
+    }
+    20% {
+        left: -4px;
+        top: 2px;
+    }
+    30% {
+        left: -6px;
+        top: 0;
+    }
+    40% {
+        left: 4px;
+        top: -4px;
+    }
+    50% {
+        left: -2px;
+        top: -2px;
+    }
+    60% {
+        left: 0px;
+        top: 0;
+    }
+    70% {
+        left: 6px;
+        top: 3px;
+    }
+    80% {
+        left: -8px;
+        top: 1px;
+    }
+    90% {
+        left: 10px;
+        top: 0;
+    }
+    100% {
+        left: 0px;
+        top: -10px;
+    }
+}
+
+/* GITHUB LINK ON THE DESC FOR THE FULL CODE.   THERE YOU CAN FIND THE KEYFRAMES ALSO. */
